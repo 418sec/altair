@@ -120,7 +120,7 @@ def vega(line, cell):
                 "Install pyyaml to parse spec as yaml"
             )
     else:
-        spec = yaml.load(cell, Loader=yaml.FullLoader)
+        spec = yaml.load(cell, Loader=yaml.SafeLoader)
 
     if data:
         spec["data"] = []
@@ -168,7 +168,7 @@ def vegalite(line, cell):
                 "Install pyyaml to parse spec as yaml"
             )
     else:
-        spec = yaml.load(cell, Loader=yaml.FullLoader)
+        spec = yaml.load(cell, Loader=yaml.SafeLoader)
 
     if args.data is not None:
         data = _get_variable(args.data)
